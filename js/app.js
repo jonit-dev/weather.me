@@ -18,7 +18,7 @@ $(function () {
         if(frbDb.ref('weather-me/leads').push({
             email: $("#userEmail").val()
         })) {
-            console.log('Lead captured');
+            // console.log('Lead captured');
         }
 
         
