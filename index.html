@@ -18,11 +18,17 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123660863-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-123660863-1');
@@ -32,16 +38,19 @@
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyC1gGqUBuUIpNWAIRdQytER7qfaGHdx-Hw",
-            authDomain: "weather-me-269b7.firebaseapp.com",
-            databaseURL: "https://weather-me-269b7.firebaseio.com",
-            projectId: "weather-me-269b7",
+            apiKey: "AIzaSyDRUw2MUCMf7ofd7qqucDMBkNzEwOTsEkY",
+            authDomain: "shadow-testing-b09fa.firebaseapp.com",
+            databaseURL: "https://shadow-testing-b09fa.firebaseio.com",
+            projectId: "shadow-testing-b09fa",
             storageBucket: "",
-            messagingSenderId: "136107283905"
+            messagingSenderId: "175505880176"
         };
         firebase.initializeApp(config);
+
+        frbDb = firebase.database();
     </script>
 
+    <script src="js/AnalyticsHandler.js"></script>
     <script src="js/app.js"></script>
 
 
@@ -64,15 +73,19 @@
 
     <main role="main" class="inner cover">
         <h1 class="cover-heading">Know what to wear, anywhere.</h1>
-        <p class="lead">Don't waste your time choosing clothes!</p>
+        <p class="lead">Choose the perfect cloth for the perfect weather!</p>
 
         <p class="lead">
-            <iframe class="landing-video"  width="560" height="315" src="https://www.youtube.com/embed/ZbFuk7zhTUk?rel=0&amp;showinfo=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe class="landing-video" width="560" height="315"
+                    src="https://www.youtube.com/embed/ZbFuk7zhTUk?rel=0&amp;showinfo=0&autoplay=1" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </p>
         <p class="lead">
-            <img src="media/google_play_badge.svg" alt="google play" class="landing-badge">
+            <img src="media/google_play_badge.svg" alt="google play" class="landing-badge" id="download-google-play"
+                 data-toggle="modal" data-target="#exampleModal">
 
-            <img src="media/app_store_badge.svg" alt="google play" class="landing-badge">
+            <img src="media/app_store_badge.svg" alt="google play" class="landing-badge" id="download-app-store"
+                 data-toggle="modal" data-target="#exampleModal">
 
         </p>
 
@@ -85,11 +98,52 @@
     </footer>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Oops! Sorry!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    We already distributed more than 50 invites for our current beta test.
+                </p>
+               <p> <strong>
+                   If you want to join our waitlist, just leave your e-mail below and we'll submit an invitation as soon as possible.</strong></p>
+
+
+                <form id="waitlist-form">
+                    <div class="form-group">
+                        <label for="userEmail">Email address</label>
+                        <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                               placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.
+                        </small>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary" id="join-waitlist">Join Waitlist</button>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!--BOOTSTRAP (Footer)-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

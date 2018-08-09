@@ -34,3 +34,12 @@ main {
 
 
 }
+
+.modal {
+    color: #272727;
+    text-shadow: none;
+}
+
+.modal-title {
+    font-weight: bold;
+}
