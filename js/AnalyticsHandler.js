@@ -1,5 +1,9 @@
 class AnalyticsHandler {
 
+    static trackVisit() {
+        AnalyticsHandler.trackClick('visits')
+    }
+
     static trackClick(source) {
 
         /* Read total clicks =========================================== */
@@ -15,16 +19,14 @@ class AnalyticsHandler {
 
                 /* Add click =========================================== */
                 frbDb.ref(`weather-me/${source}`).set({
-                    n: totalClicks + 1,
-                    action: 'download'
+                    n: totalClicks + 1
                 });
             } else { //if its the first click
 
                 // console.log('Setting first click variable');
 
                 frbDb.ref(`weather-me/${source}`).set({
-                    n: 1,
-                    action: 'download'
+                    n: 1
                 });
             }
 

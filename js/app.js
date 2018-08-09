@@ -1,5 +1,5 @@
 $(function () {
-
+    AnalyticsHandler.trackVisit();
 
     $("#download-google-play").on("click", function () {
         AnalyticsHandler.trackClick('google-play');
