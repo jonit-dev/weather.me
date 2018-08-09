@@ -19,6 +19,8 @@ $(function () {
             email: $("#userEmail").val()
         })) {
             // console.log('Lead captured');
+            $("#close-modal").click(); //close modal
+
         }
 
         

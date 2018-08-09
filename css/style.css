@@ -41,6 +41,7 @@ main {
 
     .cover-heading {
         font-size: 2rem;
+        padding-bottom: .5rem;
     }
 
     .cover-heading + p {
